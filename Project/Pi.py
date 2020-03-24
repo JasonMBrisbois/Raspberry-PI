@@ -1,15 +1,50 @@
 import pygame
 import string
 import pygame
+<<<<<<< Updated upstream
+=======
+from gpiozero import LED
+from gpiozero import Button
+from signal import pause
+import time
+import _thread
+import RPi.GPIO as GPIO
+
+def pushButton1(channel,dic):
+    led = LED(17)
+    if not GPIO.input(17):
+        print("TURN ON THE LIGHT")
+        led.on()
+        print("Button was pressed!")
+        time.sleep(3)
+    else:
+        print("TURN OFF THE LIGHT")
+        led.off()
+        print("Button was pressed!")
+        time.sleep(3)
+
+
+>>>>>>> Stashed changes
 
 # activate the pygame library .
 # initiate pygame and give permission
 # to use pygame's functionality.
 pygame.init()
 
+<<<<<<< Updated upstream
 # define the RGB value
 # for white colour
 white = (255, 255, 255)
+=======
+    def Now_running(self):
+        # Set up
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(2, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        GPIO.setup(17, GPIO.OUT)
+        GPIO.add_event_detect(2, GPIO.FALLING, callback=lambda x: pushButton1(17, self.dic), bouncetime=300)
+        
+        pygame.init()
+>>>>>>> Stashed changes
 
 # assigning values to X and Y variable
 X = 1000
@@ -62,6 +97,17 @@ while True:
     BD = dict["states"]["seatHeater"]["bDriver"];
     BP = dict["states"]["seatHeater"]["bPass"];
 
+<<<<<<< Updated upstream
+=======
+            display_surface.blit(image_car, (200, 100))
+            display_surface.blit(image_chairs, (30, 0))
+            
+            # Checking for the light
+            
+            #if GPIO.input(17):
+            #    self.dic["states"]["defrost"]["front"] = True
+# {"states": {"carLock" : True, "carOn": False, "defrost": {"back": True, "front": True}, "seatHeater": {"bDriver": False, "bPass": True, "fDriver": False, "fPass": True}}}
+>>>>>>> Stashed changes
 
     display_surface.blit(image_car, (200, 100))
     display_surface.blit(image_chairs, (30, 0))
